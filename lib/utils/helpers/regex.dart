@@ -50,12 +50,12 @@ String Function(String) emailVal = (val) {
 };
 
 String Function(String) passwordVal = (val) {
-  if (val.isEmpty) {
-    return 'Please enter a valid password';
+  if (val.isEmpty || val.length < 8) {
+    return 'password should contain 8 cha';
   } else if (passwordRegEx(val)) {
     return null;
   } else {
-    return 'enter a valid password';
+    return 'example: Abc123!';
   }
 };
 
