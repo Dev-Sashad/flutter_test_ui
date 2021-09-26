@@ -73,8 +73,15 @@ class SplashscreenView extends StatelessWidget {
                           letterSpacing: 5,
                           color: Colors.green[300],
                         )),
-                    customYMargin(kwidth(10, context)),
-                    CustomButton(
+                    // customYMargin(kwidth(10, context)),
+                  ],
+                ),
+              ),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: kheight(14, context)),
+                    child: CustomButton(
                       title: 'GET STARTED',
                       height: 7,
                       width: kwidth(80, context),
@@ -84,9 +91,7 @@ class SplashscreenView extends StatelessWidget {
                         model.navigateToPage();
                       },
                     ),
-                  ],
-                ),
-              )
+                  ))
             ],
           )),
     );

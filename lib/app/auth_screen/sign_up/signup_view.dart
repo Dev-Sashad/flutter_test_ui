@@ -93,6 +93,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                       child: ListView(
                         physics: BouncingScrollPhysics(),
+                        shrinkWrap: true,
                         children: [
                           Container(
                             child: Form(
@@ -142,53 +143,103 @@ class _SignUpViewState extends State<SignUpView> {
                               ),
                             ),
                           ),
-                          customYMargin(kwidth(10, context)),
-                          CustomButton(
-                            title: 'Register',
-                            height: 7,
-                            width: kwidth(80, context),
-                            margin: 1,
-                            online: true,
-                            onPressed: () async {
-                              if (_isValidated == true) {
-                                await model.onSignUp(context);
-                                FocusScope.of(context).unfocus();
-                                // nameController.clear();
-                                // emailController.clear();
-                                // userNameController.clear();
-                                // passwordController.clear();
-                              } else {
-                                showToast('fields can\'t be empty');
-                              }
-                            },
-                          ),
-                          customYMargin(kwidth(5, context)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Already have an account?',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 12),
-                              ),
-                              customXMargin(3),
-                              InkWell(
-                                onTap: () {
-                                  model.navigateToSignIn();
-                                },
-                                child: Text(
-                                  'Sign in',
-                                  style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
-                            ],
-                          )
+                          // customYMargin(kwidth(10, context)),
+                          // CustomButton(
+                          //   title: 'Register',
+                          //   height: 7,
+                          //   width: kwidth(80, context),
+                          //   margin: 1,
+                          //   online: true,
+                          //   onPressed: () async {
+                          //     if (_isValidated == true) {
+                          //       await model.onSignUp(context);
+                          //       FocusScope.of(context).unfocus();
+                          //       // nameController.clear();
+                          //       // emailController.clear();
+                          //       // userNameController.clear();
+                          //       // passwordController.clear();
+                          //     } else {
+                          //       showToast('fields can\'t be empty');
+                          //     }
+                          //   },
+                          // ),
+                          // customYMargin(kwidth(5, context)),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Text(
+                          //       'Already have an account?',
+                          //       style:
+                          //           TextStyle(color: Colors.grey, fontSize: 12),
+                          //     ),
+                          //     customXMargin(3),
+                          //     InkWell(
+                          //       onTap: () {
+                          //         model.navigateToSignIn();
+                          //       },
+                          //       child: Text(
+                          //         'Sign in',
+                          //         style: TextStyle(
+                          //             color: Colors.green,
+                          //             fontSize: 12,
+                          //             fontWeight: FontWeight.w700),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // )
                         ],
                       ),
                     ),
+                    Container(
+                        margin: EdgeInsets.only(top: kheight(75, context)),
+                        color: Colors.white,
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CustomButton(
+                                title: 'Register',
+                                height: 7,
+                                width: kwidth(80, context),
+                                margin: 1,
+                                online: true,
+                                onPressed: () async {
+                                  if (_isValidated == true) {
+                                    await model.onSignUp(context);
+                                    FocusScope.of(context).unfocus();
+                                    // nameController.clear();
+                                    // emailController.clear();
+                                    // userNameController.clear();
+                                    // passwordController.clear();
+                                  } else {
+                                    showToast('fields can\'t be empty');
+                                  }
+                                },
+                              ),
+                              customYMargin(kwidth(5, context)),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Already have an account?',
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 12),
+                                  ),
+                                  customXMargin(3),
+                                  InkWell(
+                                    onTap: () {
+                                      model.navigateToSignIn();
+                                    },
+                                    child: Text(
+                                      'Sign in',
+                                      style: TextStyle(
+                                          color: Colors.green,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ]))
                   ],
                 )),
           ),

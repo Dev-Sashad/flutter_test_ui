@@ -78,7 +78,7 @@ class _SignInViewState extends State<SignInView> {
                               // margin: EdgeInsets.only(top: kheight(22, context)),
                               padding: EdgeInsets.symmetric(
                                   horizontal: kwidth(4, context)),
-                              height: kheight(30, context),
+                              height: kheight(25, context),
                               width: kwidth(100, context),
                               child: Image.asset(
                                 'assets/images/login.png',
@@ -119,7 +119,76 @@ class _SignInViewState extends State<SignInView> {
                                 ),
                               ),
                             ),
-                            customYMargin(kheight(1.5, context)),
+                            // customYMargin(kheight(1.5, context)),
+                            // InkWell(
+                            //   onTap: () {
+                            //     showToast(
+                            //         'forgot password page is not in the design');
+                            //   },
+                            //   child: Align(
+                            //     alignment: Alignment.center,
+                            //     child: Text(
+                            //       'Forgot Password',
+                            //       style: TextStyle(
+                            //           color: Colors.green[300],
+                            //           fontWeight: FontWeight.w600,
+                            //           fontSize: 12),
+                            //     ),
+                            //   ),
+                            // ),
+                            // customYMargin(kheight(3, context)),
+                            // CustomButton(
+                            //   title: 'Log in',
+                            //   height: 7,
+                            //   width: kwidth(80, context),
+                            //   margin: 1,
+                            //   online: true,
+                            //   onPressed: () {
+                            //     if (_isValidated) {
+                            //       model.signIn();
+                            //       FocusScope.of(context).unfocus();
+                            //       _key.currentState.build(context);
+                            //       // userNameController.clear();
+                            //       // passwordController.clear();
+                            //     } else {
+                            //       showToast('fields can\'t be empty');
+                            //     }
+                            //   },
+                            // ),
+                            // customYMargin(kwidth(5, context)),
+                            // Row(
+                            //   mainAxisAlignment: MainAxisAlignment.center,
+                            //   children: [
+                            //     Text(
+                            //       'Don\'t have an account?',
+                            //       style: TextStyle(
+                            //           color: Colors.grey, fontSize: 12),
+                            //     ),
+                            //     customXMargin(3),
+                            //     InkWell(
+                            //       onTap: () {
+                            //         model.navigateToSignUp();
+                            //       },
+                            //       child: Text(
+                            //         'Sign up',
+                            //         style: TextStyle(
+                            //             color: Colors.green,
+                            //             fontWeight: FontWeight.bold,
+                            //             fontSize: 12),
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
+                            //customYMargin(3)
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: kheight(71, context)),
+                        color: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
                             InkWell(
                               onTap: () {
                                 showToast(
@@ -136,7 +205,7 @@ class _SignInViewState extends State<SignInView> {
                                 ),
                               ),
                             ),
-                            customYMargin(kheight(3, context)),
+                            customYMargin(kheight(2.5, context)),
                             CustomButton(
                               title: 'Log in',
                               height: 7,
@@ -179,10 +248,9 @@ class _SignInViewState extends State<SignInView> {
                                 ),
                               ],
                             ),
-                            customYMargin(3)
                           ],
                         ),
-                      ),
+                      )
                     ],
                   ),
                 )),
